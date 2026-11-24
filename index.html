@@ -147,6 +147,8 @@ input[type="text"], input[type="number"] {
 }
 .send:disabled { opacity: .45; cursor: default; }
 .hint { font-size: 13px; color: var(--ink-soft); text-align: center; min-height: 1.4em; }
+.form-wrap { width: 100%; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: #fff; }
+.form-wrap iframe { display: block; width: 100%; min-height: 720px; border: 0; }
 .sign { font-family: var(--display); font-size: 18px; color: var(--ink-soft); margin: 0; }
 
 @media (max-width: 480px) {
@@ -196,23 +198,13 @@ input[type="text"], input[type="number"] {
 
     <div class="ornament" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0 L10 5 L5 10 L0 5 Z"/></svg></div>
 
-    <section class="rsvp" id="rsvp" hidden>
+    <section class="rsvp" id="rsvp">
       <h2>Ждём вашего ответа</h2>
       <p>Пожалуйста, подтвердите участие до 14 января.</p>
-      <div class="field">
-        <label for="guest-name">Ваше имя</label>
-        <input type="text" id="guest-name" autocomplete="name" placeholder="Например, Ашот и Карина">
+      <div class="form-wrap">
+        <iframe src="https://forms.yandex.ru/u/6b05b9f149af477538523ec7/?iframe=1" name="ya-form-6b05b9f149af477538523ec7" title="Подтверждение участия" loading="lazy"></iframe>
       </div>
-      <div class="choice" role="group" aria-label="Ваш ответ">
-        <button type="button" id="ans-yes" aria-pressed="false">Приду</button>
-        <button type="button" id="ans-no" aria-pressed="false">Не смогу</button>
-      </div>
-      <div class="field" id="count-field" hidden>
-        <label for="guest-count">Сколько человек придёт</label>
-        <input type="number" id="guest-count" min="1" max="20" value="1" inputmode="numeric">
-      </div>
-      <button type="button" class="send" id="send" disabled>Отправить ответ</button>
-      <div class="hint" id="hint"></div>
+      <p class="hint">Если форма не загрузилась, <a class="map-link" href="https://forms.yandex.ru/u/6b05b9f149af477538523ec7/" target="_blank" rel="noopener">откройте её отдельно</a>.</p>
     </section>
 
     <p class="sign">С любовью, ваша семья</p>
@@ -222,7 +214,7 @@ input[type="text"], input[type="number"] {
 <script>
 // Контакт для ответов. Заполнить, когда будет известен:
 // type: "telegram" (value — username без @) или "whatsapp" (value — номер в формате 79001234567)
-const CONTACT = { type: "telegram", value: "gordjan" };
+const CONTACT = { type: "", value: "" };
 
 (function countdown() {
   const el = document.getElementById("countdown");
@@ -287,5 +279,6 @@ const CONTACT = { type: "telegram", value: "gordjan" };
 })();
 </script>
 
+<script src="https://forms.yandex.ru/_static/embed.js"></script>
 </body>
 </html>
