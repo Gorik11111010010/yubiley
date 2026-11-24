@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Юбилей Мнацакана — 70 лет">
+<meta property="og:description" content="21 января 2027, 17:00, Казань, ул. Дружинная, 8">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<title>Юбилей Мнацакана</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600&display=swap">
+<style>
+/* Layout: одна открытка на тёмно-зелёном фоне, как плотная карточка в конверте. Единый образ, без тёмной/светлой темы. */
+:root {
+  --ground: #1f2e29;
+  --ground-2: #26382f;
+  --paper: #f7f5ef;
+  --ink: #1d2622;
+  --ink-soft: #55615b;
+  --brass: #9a7b3f;
+  --brass-soft: #c9b183;
+  --rule: #d9d3c4;
+  --display: "Prata", "Georgia", "Times New Roman", serif;
+  --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: radial-gradient(120% 80% at 50% 0%, var(--ground-2), var(--ground));
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100%;
+  padding-block: 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  padding: 14px;
+}
+.frame {
+  border: 1px solid var(--brass-soft);
+  outline: 1px solid var(--brass-soft);
+  outline-offset: -6px;
+  padding: 48px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 600;
+}
+.age {
+  font-family: var(--display);
+  font-size: clamp(96px, 28vw, 150px);
+  line-height: .9;
+  color: var(--ink);
+  margin: 0;
+}
+.age small {
+  display: block;
+  font-family: var(--body);
+  font-size: 13px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(30px, 8vw, 40px);
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+.ornament { display: flex; align-items: center; gap: 12px; color: var(--brass); width: 100%; max-width: 260px; }
+.ornament::before, .ornament::after { content: ""; flex: 1; height: 1px; background: var(--brass-soft); }
+.ornament svg { width: 14px; height: 14px; fill: var(--brass); }
+.lead { max-width: 40ch; margin: 0; color: var(--ink); text-wrap: pretty; }
+.details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.details > div { padding: 18px 8px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.details > div + div { border-left: 1px solid var(--rule); }
+.label { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.value { font-family: var(--display); font-size: 20px; line-height: 1.25; }
+.sub { font-size: 13px; color: var(--ink-soft); }
+.countdown { font-size: 14px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.countdown b { color: var(--ink); font-weight: 600; }
+.map-link {
+  font-size: 14px; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--brass); padding-bottom: 2px;
+}
+.map-link:hover { color: var(--brass); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+.rsvp { width: 100%; display: flex; flex-direction: column; gap: 16px; align-items: stretch; text-align: left; }
+.rsvp h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; text-align: center; }
+.rsvp p { margin: 0; text-align: center; font-size: 14px; color: var(--ink-soft); }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+input[type="text"], input[type="number"] {
+  font: inherit; color: var(--ink); background: #fff;
+  border: 1px solid var(--rule); border-radius: 3px; padding: 11px 12px; width: 100%;
+}
+.choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice button {
+  font: inherit; font-weight: 500; cursor: pointer;
+  padding: 12px; border-radius: 3px;
+  border: 1px solid var(--ink); background: transparent; color: var(--ink);
+}
+.choice button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.send {
+  font: inherit; font-weight: 600; letter-spacing: .04em; cursor: pointer;
+  padding: 14px; border-radius: 3px; border: none;
+  background: var(--brass); color: #fff;
+}
+.send:disabled { opacity: .45; cursor: default; }
+.hint { font-size: 13px; color: var(--ink-soft); text-align: center; min-height: 1.4em; }
+.sign { font-family: var(--display); font-size: 18px; color: var(--ink-soft); margin: 0; }
+
+@media (max-width: 480px) {
+  .frame { padding: 36px 18px 32px; }
+  .details { grid-template-columns: 1fr; }
+  .details > div + div { border-left: none; border-top: 1px solid var(--rule); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card { animation: rise .7s ease-out both; }
+  @keyframes rise { from { transform: translateY(12px); } to { transform: none; } }
+}
+</style>
+
+<main class="card">
+  <div class="frame">
+    <span class="eyebrow">Приглашение на юбилей</span>
+
+    <p class="age">70<small>лет</small></p>
+
+    <h1>Мнацакан</h1>
+
+    <div class="ornament" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0 L10 5 L5 10 L0 5 Z"/></svg></div>
+
+    <p class="lead">Дорогие родные и друзья! Приглашаем вас разделить с нами большой день: семидесятилетний юбилей нашего любимого папы и дедушки. Будем счастливы видеть вас за праздничным столом.</p>
+
+    <div class="details">
+      <div>
+        <span class="label">Дата</span>
+        <span class="value">21 января</span>
+        <span class="sub">четверг, 2027</span>
+      </div>
+      <div>
+        <span class="label">Начало</span>
+        <span class="value">17:00</span>
+        <span class="sub">просим не опаздывать</span>
+      </div>
+      <div>
+        <span class="label">Место</span>
+        <span class="value">ул. Дружинная, 8</span>
+        <span class="sub">Казань</span>
+      </div>
+    </div>
+
+    <a class="map-link" href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D0%94%D1%80%D1%83%D0%B6%D0%B8%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%208" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
+
+    <p class="countdown" id="countdown"></p>
+
+    <div class="ornament" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0 L10 5 L5 10 L0 5 Z"/></svg></div>
+
+    <section class="rsvp" id="rsvp" hidden>
+      <h2>Ждём вашего ответа</h2>
+      <p>Пожалуйста, подтвердите участие до 14 января.</p>
+      <div class="field">
+        <label for="guest-name">Ваше имя</label>
+        <input type="text" id="guest-name" autocomplete="name" placeholder="Например, Ашот и Карина">
+      </div>
+      <div class="choice" role="group" aria-label="Ваш ответ">
+        <button type="button" id="ans-yes" aria-pressed="false">Приду</button>
+        <button type="button" id="ans-no" aria-pressed="false">Не смогу</button>
+      </div>
+      <div class="field" id="count-field" hidden>
+        <label for="guest-count">Сколько человек придёт</label>
+        <input type="number" id="guest-count" min="1" max="20" value="1" inputmode="numeric">
+      </div>
+      <button type="button" class="send" id="send" disabled>Отправить ответ</button>
+      <div class="hint" id="hint"></div>
+    </section>
+
+    <p class="sign">С любовью, ваша семья</p>
+  </div>
+</main>
+
+<script>
+// Контакт для ответов. Заполнить, когда будет известен:
+// type: "telegram" (value — username без @) или "whatsapp" (value — номер в формате 79001234567)
+const CONTACT = { type: "telegram", value: "gordjan" };
+
+(function countdown() {
+  const el = document.getElementById("countdown");
+  const party = new Date("2027-01-21T17:00:00+03:00");
+  const days = Math.ceil((party - new Date()) / 86400000);
+  if (days > 1) {
+    const n = days % 100, n1 = days % 10;
+    const word = (n > 10 && n < 20) ? "дней" : n1 === 1 ? "день" : (n1 >= 2 && n1 <= 4) ? "дня" : "дней";
+    el.innerHTML = "До праздника <b>" + days + "</b> " + word;
+  } else if (days === 1) {
+    el.textContent = "Праздник уже завтра";
+  } else if (days === 0) {
+    el.textContent = "Праздник сегодня";
+  } else {
+    el.hidden = true;
+  }
+})();
+
+(function rsvp() {
+  if (!CONTACT.type || !CONTACT.value) return;
+  const box = document.getElementById("rsvp");
+  box.hidden = false;
+  const name = document.getElementById("guest-name");
+  const yes = document.getElementById("ans-yes");
+  const no = document.getElementById("ans-no");
+  const countField = document.getElementById("count-field");
+  const count = document.getElementById("guest-count");
+  const send = document.getElementById("send");
+  const hint = document.getElementById("hint");
+  let answer = null;
+
+  function refresh() {
+    yes.setAttribute("aria-pressed", answer === "yes");
+    no.setAttribute("aria-pressed", answer === "no");
+    countField.hidden = answer !== "yes";
+    send.disabled = !answer || !name.value.trim();
+    const app = CONTACT.type === "telegram" ? "Telegram" : "WhatsApp";
+    send.textContent = "Отправить ответ в " + app;
+  }
+  yes.addEventListener("click", () => { answer = "yes"; refresh(); });
+  no.addEventListener("click", () => { answer = "no"; refresh(); });
+  name.addEventListener("input", refresh);
+
+  send.addEventListener("click", () => {
+    const who = name.value.trim();
+    const n = Math.max(1, parseInt(count.value, 10) || 1);
+    const text = answer === "yes"
+      ? "Здравствуйте! Это " + who + ". С радостью придём на юбилей Мнацакана 21 января. Нас будет: " + n + "."
+      : "Здравствуйте! Это " + who + ". К сожалению, не сможем прийти на юбилей Мнацакана 21 января. Поздравляем от всей души!";
+    let url;
+    if (CONTACT.type === "telegram") {
+      url = "https://t.me/" + encodeURIComponent(CONTACT.value) + "?text=" + encodeURIComponent(text);
+    } else {
+      url = "https://wa.me/" + encodeURIComponent(CONTACT.value) + "?text=" + encodeURIComponent(text);
+    }
+    const a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+    hint.textContent = "Откроется мессенджер с готовым сообщением. Останется нажать «Отправить».";
+  });
+  refresh();
+})();
+</script>
+
+</body>
+</html>
